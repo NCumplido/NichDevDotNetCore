@@ -70,7 +70,7 @@ namespace NichDevDotNetCore.Controllers
                 return NotFound();
             }
 
-            var post = await (EditPostViewModel) _context.Posts.FindAsync(id);
+            var post = await  _context.Posts.FindAsync(id);
             if (post == null)
             {
                 return NotFound();
@@ -83,9 +83,9 @@ namespace NichDevDotNetCore.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(EditPostViewModel postViewModel)
+        public async Task<IActionResult> Edit(Post post) //EditPostViewModel postViewModel)
         {
-            if (postViewModel == null)
+            if (post == null)
             {
                 return NotFound();
             }
@@ -94,12 +94,12 @@ namespace NichDevDotNetCore.Controllers
             {
                 try
                 {
-                    _context.Update(postViewModel);
+                    _context.Update(post);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!PostExists(postViewModel.Id))
+                    if (!PostExists(post.Id))
                     {
                         return NotFound();
                     }
@@ -110,7 +110,7 @@ namespace NichDevDotNetCore.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(postViewModel);
+            return View(post);
         }
 
         // GET: Posts/Delete/5
