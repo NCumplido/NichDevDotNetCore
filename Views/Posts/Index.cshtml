@@ -4,7 +4,27 @@
     ViewData["Title"] = "Index";
 }
 
+<head>
+    <meta charset="utf-8" />
+    <script src="scripts/app.js"></script>
+    <title></title>
+</head>
+
 <h1>Index</h1>
+
+<div id="selectingTheSelector">
+                <label for="cars">Choose a car:</label>
+
+                <select name="cars" id="selectListToUse">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                </select>
+                    <option id="optionToShow" value="optionToShow" hidden>optionToShow</option>
+</div>
+<div>
+    <input id="compiler" value="TypeScript" onclick="manageDropdown()" /><br />
+</div>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -19,17 +39,18 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Content)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Content)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
