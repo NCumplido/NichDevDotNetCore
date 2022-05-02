@@ -1,0 +1,55 @@
+﻿<head>
+    <meta charset="utf-8" />
+
+    <script src="scripts/app.js"></script>
+
+    <!-- Bootstrap files -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/PluralSightFlexBoxBootstrap4.css" />
+
+    <title></title>
+
+</head>
+
+    <form>    
+    <input type="button" value="Home" onclick="location.href='@Url.Action("Index", "Posts")'" />
+    </form>
+
+        @*Logo*@
+<div class="d-flex">
+    <img src="images/welsh_flag.png" class="logo">
+</div>
+
+        @*Banner*@
+<div class="d-flex flex-row banner"></div>
+
+@*Cards*@
+<div class="d-flex">
+    <div class="callOuts d-flex flex-column">
+        <img src="images/PluralSightCSS/shoe_Blue.png" class="d-block">
+        <h3>Shoes</h3>
+        <p>Gotta go fast</p>
+    </div>
+    <div class="callOuts d-flex flex-column">
+        <img src="images/PluralSightCSS/mountain_Blue.png" class="d-block">
+        <h3>Dat big mountain</h3>
+        <p>Coming around the mountain</p>
+    </div>
+    <div class="callOuts d-flex flex-column">
+        <img src="images/PluralSightCSS/bicycle_Blue.png" class="d-block">
+        <h3>Cycling</h3>
+        <p>Go go go</p>
+    </div>
+@*    <div class="callOuts d-flex flex-column">
+        <img src="images/PluralSightCSS/" class="d-block">
+        <h3></h3>
+        <p></p>
+    </div>*@
+</div>
+
+@*<div class="d-flex flex-row">
+    <div class="testBox">Box One</div>
+    <div class="testBox">Box Two</div>
+    <div class="testBox">Box Three</div>
+    <div class="testBox">Box Four</div>
+</div>*@

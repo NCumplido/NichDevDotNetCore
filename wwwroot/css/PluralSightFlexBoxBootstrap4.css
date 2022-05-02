@@ -1,0 +1,27 @@
+﻿.testBox {
+    background-color: #d5d9de;
+    border: 1px solid #a9acb0;
+    padding: 10px 20px;
+}
+
+.logo{
+    width: auto;
+    height: 150px;
+}
+
+.banner{
+    height: 150px;
+    background-image: url('https://static.nationalgeographic.co.uk/files/styles/image_3200/public/NationalGeographic_2201711.webp?w=1190&h=792');
+    background-size: cover;
+    background-position: center -100px;
+}
+
+.callOuts {
+    border: 1px solid #d7d8da;
+    /*background-color: #60defa*/
+}
+
+.callOuts img {
+    height: auto;
+    width: 100px;
+}

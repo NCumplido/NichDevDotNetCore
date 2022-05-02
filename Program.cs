@@ -38,7 +38,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Posts}/{action=Index}/{id?}");
+    pattern: "{controller=FlexBoxBootStrapCourse}/{action=Index}/{id?}");
 app.MapRazorPages();
 
 app.Run();
