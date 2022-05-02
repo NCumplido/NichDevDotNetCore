@@ -4,12 +4,12 @@
     padding: 10px 20px;
 }
 
-.logo{
+.logo {
     width: auto;
     height: 150px;
 }
 
-.banner{
+.banner {
     height: 150px;
     background-image: url('https://static.nationalgeographic.co.uk/files/styles/image_3200/public/NationalGeographic_2201711.webp?w=1190&h=792');
     background-size: cover;
@@ -21,7 +21,35 @@
     /*background-color: #60defa*/
 }
 
-.callOuts img {
-    height: auto;
-    width: 100px;
+    .callOuts img {
+        height: auto;
+        width: 100px;
+    }
+
+.w-20 {
+    width: 20% !important;
 }
+
+.w-60 {
+    width: 60% !important;
+}
+
+.h-25 {
+    height: 25% !important;
+}
+
+.bottomArea {
+    background-color: #424243;
+    height: 250px;
+    color: #fff;
+    font-size: .8rem;
+}
+
+    .bottomArea p {
+        font-size: .7rem;
+    }
+
+    .bottomArea h5 {
+        font-weight: 800;
+        font-size: 16px;
+    }

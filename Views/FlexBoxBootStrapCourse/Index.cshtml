@@ -11,16 +11,14 @@
 
 </head>
 
-    <form>    
-    <input type="button" value="Home" onclick="location.href='@Url.Action("Index", "Posts")'" />
-    </form>
+<form>
+    @*Logo*@
+    <div class="d-flex">
+        <img src="images/welsh_flag.png" class="logo" onclick="location.href='@Url.Action("Index", "Posts")'">
+    </div>
+</form>
 
-        @*Logo*@
-<div class="d-flex">
-    <img src="images/welsh_flag.png" class="logo">
-</div>
-
-        @*Banner*@
+@*Banner*@
 <div class="d-flex flex-row banner"></div>
 
 @*Cards*@
@@ -40,11 +38,40 @@
         <h3>Cycling</h3>
         <p>Go go go</p>
     </div>
-@*    <div class="callOuts d-flex flex-column">
+    @*    <div class="callOuts d-flex flex-column">
         <img src="images/PluralSightCSS/" class="d-block">
         <h3></h3>
         <p></p>
-    </div>*@
+        </div>*@
+</div>
+
+@*Text and Image*@
+<div class="d-flex">
+    <div class="w-25">
+        <img src="~/images/PluralSightCSS/shutterstock_422560537.jpg" class="img-fluid"/>
+    </div>
+    <div class="w-75">
+        <h4>Title Section</h4>
+        <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+        <a href="#" class="btn btn-primary">Learn more</a>
+    </div>
+</div>
+
+<div class="d-flex bottomArea">
+    <div class="w-60">
+        <img src="~/images/welsh_flag.png" class="img-fluid h-25">
+        <h5>About Us</h5>
+        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+    </div>
+    <div class="d-flex flex-column">
+        <h5>Contact Me:</h5>
+        <div>Nich</div>
+        <div>123 Smith Avenue</div>
+        <div>Lala Land</div>
+        <div>info@example.net</div>
+    </div>
 </div>
 
 @*<div class="d-flex flex-row">
@@ -52,4 +79,4 @@
     <div class="testBox">Box Two</div>
     <div class="testBox">Box Three</div>
     <div class="testBox">Box Four</div>
-</div>*@
+    </div>*@
