@@ -19,6 +19,7 @@ namespace NichDevDotNetCore.Controllers
         // GET: Posts
         public async Task<IActionResult> Index()
         {
+            PostsViewModel viewModel = new PostsViewModel();
             return View(await _context.Posts.ToListAsync());
         }
 
