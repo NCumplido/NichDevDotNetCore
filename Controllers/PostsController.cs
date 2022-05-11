@@ -33,6 +33,8 @@ namespace NichDevDotNetCore.Controllers
 
             var post = await _context.Posts
                 .FirstOrDefaultAsync(m => m.Id == id);
+
+            post.Comments = _context.Comments.Where(c => c.Id == post.Id);
             if (post == null)
             {
                 return NotFound();

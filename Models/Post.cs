@@ -9,6 +9,6 @@ namespace NichDevDotNetCore.Models
         [Required]
         public string Content { get; set; }
 
-        public ICollection<Comment>? Comments { get; set; }
+        public IQueryable<Comment>? Comments { get; set; }
     }
 }

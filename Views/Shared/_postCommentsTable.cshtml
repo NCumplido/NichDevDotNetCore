@@ -1,0 +1,32 @@
+﻿@model NichDevDotNetCore.Models.Post
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Comments
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if(Model?.Comments is not null){
+            @foreach (var item in Model.Comments)
+            {
+                <tr class="testBox">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Content)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="callOuts">Edit</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="callOuts">Delete</a>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <p>No Comments</p>
+        }
+    </tbody>
+</table>
