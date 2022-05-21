@@ -4,16 +4,19 @@ using Microsoft.EntityFrameworkCore;
 using NichDevDotNetCore.Data;
 using NichDevDotNetCore.Models;
 using NichDevDotNetCore.Models.ViewModels;
+using NichDevDotNetCore.Repositories;
 
 namespace NichDevDotNetCore.Controllers
 {
     public class PostsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly PostRepository _postRepository;
 
         public PostsController(ApplicationDbContext context)
         {
             _context = context;
+            _postRepository = new PostRepository(context);
         }
 
         // GET: Posts
@@ -24,7 +27,7 @@ namespace NichDevDotNetCore.Controllers
         }
 
         // GET: Posts/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(int id)
         {
             if (id == null)
             {
@@ -34,7 +37,9 @@ namespace NichDevDotNetCore.Controllers
             var post = await _context.Posts
                 .FirstOrDefaultAsync(m => m.Id == id);
 
-            post.Comments = _context.Comments.Where(c => c.Id == post.Id);
+            //var comments = _context.Comments.ToListAsync();
+            post.Comments = _postRepository.GetAllCommentsByPost(id);
+                //_context.Comments.Where(c => c.Id == post.Id);
             if (post == null)
             {
                 return NotFound();
