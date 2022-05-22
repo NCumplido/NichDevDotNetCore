@@ -1,6 +1,7 @@
 ﻿#nullable disable
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using NichDevDotNetCore.API;
 using NichDevDotNetCore.Data;
 using NichDevDotNetCore.Models;
 using NichDevDotNetCore.Models.ViewModels;
@@ -24,6 +25,10 @@ namespace NichDevDotNetCore.Controllers
         {
             PostsViewModel viewModel = new PostsViewModel();
             viewModel.Posts = await _context.Posts.ToListAsync();
+
+            var catFactService = new CatFactService();
+            var catFact = catFactService.GetCatFact();
+            viewModel.CatFact = await catFact;
             return View(viewModel);
         }
 
