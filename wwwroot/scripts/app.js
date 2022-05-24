@@ -20,4 +20,7 @@ function manageDropdown() {
     optionToShow.hidden = false;
     selectListToUse.add(optionToShow);
 }
+function sayHello() {
+    console.log("Yo yo yo from typescript");
+}
 //# sourceMappingURL=app.js.map

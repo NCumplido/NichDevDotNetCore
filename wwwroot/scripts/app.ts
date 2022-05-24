@@ -13,8 +13,6 @@
 //}
 
 function manageDropdown() {
-
-
 //    const compiler = (document.getElementById("compiler") as HTMLInputElement)
 //        .value;
     console.log("Input clicked");
@@ -24,4 +22,8 @@ function manageDropdown() {
     optionToShow.hidden = false;
 
     selectListToUse.add(optionToShow);
+}
+
+function sayHello() {
+    console.log("Yo yo yo from typescript");
 }
