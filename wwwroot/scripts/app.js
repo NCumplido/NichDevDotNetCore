@@ -23,4 +23,7 @@ function manageDropdown() {
 function sayHello() {
     console.log("Yo yo yo from typescript");
 }
+function getCatFact() {
+    console.log("Cat fact called");
+}
 //# sourceMappingURL=app.js.map
