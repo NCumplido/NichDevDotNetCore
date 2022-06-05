@@ -26,10 +26,17 @@ namespace NichDevDotNetCore.Controllers
             PostsViewModel viewModel = new PostsViewModel();
             viewModel.Posts = await _context.Posts.ToListAsync();
 
-            var catFactService = new CatFactService();
-            var catFact = catFactService.GetCatFact();
+            var catFact = GetCatFact();
             viewModel.CatFact = await catFact;
             return View(viewModel);
+        }
+
+        public async Task<CatFact> GetCatFact()
+        {
+            var catFactService = new CatFactService();
+            var catFact = await catFactService.GetCatFact();
+
+            return catFact;
         }
 
         // GET: Posts/Details/5
