@@ -13,7 +13,6 @@ public class CatFactService //: ICatFactService
         List<CatFact> catFacts = new List<CatFact>();
 
         var url = $"https://catfact.ninja/fact";
-        //var parameters = $"?query={query}&apiKey={APIEnums.catFactURL}";
 
         HttpClient client = new HttpClient();
         client.BaseAddress = new Uri(url);
