@@ -30,28 +30,24 @@ function sayHello() {
 
 function getCatFact() {
     var xhr = new XMLHttpRequest();
-    console.log("Cat fact called");
 
     xhr.open("POST", "/Posts/GetCatFact", true);
     xhr.setRequestHeader("Content-Type", "application/json");
-   // console.log("1 ", xhr);
 
-    //OR
-
-    //Option 2: Nothing to submit to the server
     xhr.send();
 
-    console.log("xhr: ", xhr);
-
     xhr.onload = function (response) {
-        //console.log("Response: ", response);
 
-        //console.log("currentTarget ", response.currentTarget);
-        //if (response.target == 200) {
+        const catFactParagraph = (document.getElementById("catFactParagraph") as HTMLParagraphElement);
 
-        //    data = JSON.parse(response.target.response);
+        let catFactResponse = xhr.responseText;
 
-        //}
+        let json = JSON.parse(catFactResponse);
+        console.log(`Fact: ${json.fact}`);
+
+        let catFactString = json.fact;
+
+        catFactParagraph.innerText = catFactString;
 
     };
 
