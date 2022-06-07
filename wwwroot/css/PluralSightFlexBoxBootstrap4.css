@@ -64,5 +64,13 @@ h3 {
     margin: 0.5rem;
     padding: 1rem;
     background: #0206f7;
-    color: white !important;
+    color: white;
+}
+
+.getButton {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    background: black;
+    color: white;
+    border: none;
 }
