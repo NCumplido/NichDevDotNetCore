@@ -6,16 +6,16 @@
             <th>
                 @Html.DisplayNameFor(model => model.Content)
             </th>
-            <th>
+            <th scope="col">
                 @Html.DisplayNameFor(model => model.Comments)
             </th>
-            <th></th>
+            <th scope="col"></th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model.Posts)
         {
-            <tr class="testBox">
+            <tr  scope="row">
                 <td>
                     @Html.DisplayFor(modelItem => item.Content)
                 </td>
