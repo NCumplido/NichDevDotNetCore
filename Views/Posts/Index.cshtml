@@ -1,5 +1,4 @@
 ﻿@model NichDevDotNetCore.Models.ViewModels.PostsViewModel
-
 @{
     ViewData["Title"] = "Index";
 }
@@ -17,14 +16,18 @@
 </head>
 
 <div id="navBar" class="d-flex">
-    <h1 class="testBox" onclick="sayHello()">Index</h1>
-    <form>
-        <input type="button" value="Flex Box and Bootstrap 4 PluralSight course" onclick="location.href='@Url.Action("Index", "FlexBoxBootStrapCourse")'" />
-    </form>
+    <div class="w-75">
+        <h1 class="callOuts w-50" onclick="sayHello()">NichDev: DotNetCore</h1>
+    </div>
+    <div class="w-25">
+        <form>
+            <input type="button" value="Flex Box and Bootstrap 4 PluralSight course" onclick="location.href='@Url.Action("Index", "FlexBoxBootStrapCourse")'" />
+        </form>
+    </div>
 </div>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
 </p>
 
 @*<div class="d-flex flex-row">

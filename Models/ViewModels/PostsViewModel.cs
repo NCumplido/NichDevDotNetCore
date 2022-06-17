@@ -8,6 +8,7 @@ namespace NichDevDotNetCore.Models.ViewModels
         public string Content { get; set; }
 
         public IQueryable<Comment>? Comments { get; set; }
+        public int? NumberOfComments{ get; set; }
 
         public CatFact CatFact { get; set; }
     }
