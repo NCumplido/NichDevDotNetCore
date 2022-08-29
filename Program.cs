@@ -16,7 +16,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 //builder.Services.AddTransient<ICatFactService, CatFactService>();
-builder.Services.AddTransient<ICatFactService, FakeCatFactService>();
+builder.Services.AddTransient<ICatFactService, CatFactService>();
 
 var app = builder.Build();
 
@@ -42,7 +42,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=FinanceHome}/{action=Index}/{id?}");
+    pattern: "{controller=Posts}/{action=Index}/{id?}");
 app.MapRazorPages();
 
 app.Run();

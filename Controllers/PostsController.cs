@@ -32,6 +32,12 @@ namespace NichDevDotNetCore.Controllers
             return View(viewModel);
         }
 
+        public async Task<CatFact> GetCatFact()
+        {
+            var catFact = await _catFactService.GetCatFact();
+            return catFact;
+        }
+
         public async Task<IActionResult> Details(int id)
         {
 
