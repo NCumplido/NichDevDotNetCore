@@ -2,11 +2,12 @@
 using NichDevDotNetCore.Enums;
 using NichDevDotNetCore.Models;
 using NichDevDotNetCore.Models.API;
+using NichDevDotNetCore.Services;
 using System.Net.Http.Headers;
 
 namespace NichDevDotNetCore.API;
 
-public class CatFactService //: ICatFactService
+public class CatFactService : ICatFactService
 {
     public async Task<CatFact> GetCatFact()
     {

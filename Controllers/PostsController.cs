@@ -6,6 +6,7 @@ using NichDevDotNetCore.Data;
 using NichDevDotNetCore.Models;
 using NichDevDotNetCore.Models.ViewModels;
 using NichDevDotNetCore.Repositories;
+using NichDevDotNetCore.Services;
 
 namespace NichDevDotNetCore.Controllers
 {
@@ -13,11 +14,13 @@ namespace NichDevDotNetCore.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly PostRepository _postRepository;
+        private readonly ICatFactService _catFactService;
 
-        public PostsController(ApplicationDbContext context)
+        public PostsController(ApplicationDbContext context, ICatFactService catFactService)
         {
             _context = context;
             _postRepository = new PostRepository(context);
+            _catFactService = catFactService;
         }
 
         public async Task<IActionResult> Index()
@@ -25,17 +28,8 @@ namespace NichDevDotNetCore.Controllers
             PostsViewModel viewModel = new PostsViewModel();
             viewModel.Posts = await _context.Posts.ToListAsync();
 
-            var catFact = GetCatFact();
-            viewModel.CatFact = await catFact;
+            viewModel.CatFact = await _catFactService.GetCatFact();
             return View(viewModel);
-        }
-
-        public async Task<CatFact> GetCatFact()
-        {
-            var catFactService = new CatFactService();
-            var catFact = await catFactService.GetCatFact();
-
-            return catFact;
         }
 
         public async Task<IActionResult> Details(int id)
@@ -86,7 +80,7 @@ namespace NichDevDotNetCore.Controllers
             return View(post);
         }
 
-         [HttpPost]
+        [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(Post post)
         {
@@ -118,7 +112,7 @@ namespace NichDevDotNetCore.Controllers
             return View(post);
         }
 
-         public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
             {
@@ -135,7 +129,7 @@ namespace NichDevDotNetCore.Controllers
             return View(post);
         }
 
-         [HttpPost, ActionName("Delete")]
+        [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {

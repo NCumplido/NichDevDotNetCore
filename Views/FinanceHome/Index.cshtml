@@ -1,5 +1,4 @@
-﻿@model NichDevDotNetCore.Models.ViewModels.PostsViewModel
-@{
+﻿@{
     ViewData["Title"] = "Index";
 }
 
@@ -44,7 +43,7 @@
             <h3 class="card-title">Cat Facts</h3>
         </div>
         <div class="d-flex flex-row">
-            <p id="catFactParagraph">@Model.CatFact.Fact</p>
+            <p id="catFactParagraph"></p>
         </div>
         <div class="d-flex flex-row">
             <input class="btn btn-info" type="button" value="Get Cat" onclick="getCatFact()" />

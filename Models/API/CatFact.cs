@@ -6,7 +6,7 @@ namespace NichDevDotNetCore.Models
     public class CatFact
     {
         //[JsonProperty("title")]
-        public string fact { get; set; }
-        public int length { get; set; }
+        public string Fact { get; set; }
+        public int Length { get; set; }
     }
 }

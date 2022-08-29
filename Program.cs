@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using NichDevDotNetCore.API;
 using NichDevDotNetCore.Data;
+using NichDevDotNetCore.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +15,8 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
+//builder.Services.AddTransient<ICatFactService, CatFactService>();
+builder.Services.AddTransient<ICatFactService, FakeCatFactService>();
 
 var app = builder.Build();
 
@@ -38,7 +42,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Posts}/{action=Index}/{id?}");
+    pattern: "{controller=FinanceHome}/{action=Index}/{id?}");
 app.MapRazorPages();
 
 app.Run();
