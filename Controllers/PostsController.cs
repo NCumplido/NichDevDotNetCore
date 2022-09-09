@@ -1,7 +1,6 @@
 ﻿#nullable disable
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using NichDevDotNetCore.API;
 using NichDevDotNetCore.Data;
 using NichDevDotNetCore.Models;
 using NichDevDotNetCore.Models.ViewModels;
