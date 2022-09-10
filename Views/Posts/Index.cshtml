@@ -15,44 +15,45 @@
     <title></title>
 </head>
 
-<div id="navBar" class="d-flex">
-    <div class="w-75">
-        <h1 class="callOuts w-50" onclick="sayHello()">NichDev: DotNetCore</h1>
+    <h1 class="callOuts w-50" onclick="sayHello()">NichDev: DotNetCore</h1>
+
+    @*Banner*@
+    <div class="d-flex flex-row banner">
+        <a asp-action="Create" class="btn btn-primary">Create New</a>
     </div>
-    <div class="w-25">
-        <form>
-            <input type="button" value="Flex Box and Bootstrap 4 PluralSight course" onclick="location.href='@Url.Action("Index", "FlexBoxBootStrapCourse")'" />
-        </form>
-    </div>
-</div>
 
-<p>
-    <a asp-action="Create" class="btn btn-primary">Create New</a>
-</p>
-
-@*<div class="d-flex flex-row">
-    <div class="testBox">Box One</div>
-    <div class="testBox">Box Two</div>
-    <div class="testBox">Box Three</div>
-    <div class="testBox">Box Four</div>
-    </div>*@
-
-<div class="d-flex flex-row">
-
-    <div class="d-flex flex-column w-25 secondaryBox">
-        <div class="d-flex flex-row">
-            <h3 class="card-title">Cat Facts</h3>
-        </div>
-        <div class="d-flex flex-row">
-            <p id="catFactParagraph">@Model.CatFact.Fact</p>
-        </div>
-        <div class="d-flex flex-row">
-            <input class="btn btn-info" type="button" value="Get Cat" onclick="getCatFact()" />
+    <div id="navBar" class="d-flex">
+        <div>
         </div>
     </div>
 
-    <div class="d-flex flex-row w-75">
-        @await Html.PartialAsync("../Shared/_postsTable")
-    </div>
+@*    <p>
+        <a asp-action="Create" class="btn btn-primary">Create New</a>
+    </p>*@
 
-</div>
+    @*<div class="d-flex flex-row">
+        <div class="testBox">Box One</div>
+        <div class="testBox">Box Two</div>
+        <div class="testBox">Box Three</div>
+        <div class="testBox">Box Four</div>
+        </div>*@
+
+    <div class="d-flex flex-row">
+
+        <div class="d-flex flex-column w-25 secondaryBox">
+            <div class="d-flex flex-row">
+                <h3 class="card-title">Cat Facts</h3>
+            </div>
+            <div class="d-flex flex-row">
+                <p id="catFactParagraph">@Model.CatFact.Fact</p>
+            </div>
+            <div class="d-flex flex-row">
+                <input class="btn btn-info" type="button" value="Get Cat" onclick="getCatFact()" />
+            </div>
+        </div>
+
+        <div class="d-flex flex-row w-75">
+            @await Html.PartialAsync("../Shared/_postsTable")
+        </div>
+
+    </div>
