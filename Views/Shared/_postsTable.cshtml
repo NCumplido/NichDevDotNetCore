@@ -25,17 +25,12 @@
                         @Html.DisplayFor(modelItem => item.Comments)
                     </td>
                     <td>
-                        <div class="dropdown show">
-                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Dropdown link
-                            </a>
-
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </div>
+                        <select>
+                            @*<option asp-action="Details" asp-route-id="@item.Id">Details</option>*@
+                            <option asp-action="Details" asp-route-id="@item.Id">Details</option>
+                            <option asp-action="Edit" asp-route-id="@item.Id">Edit</option>
+                            <option asp-action="Delete" asp-route-id="@item.Id">Delete</option>
+                        </select>
                     </td>
                 </tr>
             }
@@ -50,6 +45,17 @@
         <a asp-action="Edit" asp-route-id="@item.Id" class="callOuts">Edit</a>
         <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-info">Details</a>
         <a asp-action="Delete" asp-route-id="@item.Id" class="callOuts">Delete</a>
+        </div>
+        </div>
+
+        <div class="dropdown show">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Options
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Something else here</a>
         </div>
         </div>*@
 
