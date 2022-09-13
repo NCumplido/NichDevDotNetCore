@@ -25,16 +25,14 @@
 </div>
 
 <div id="navBar" class="d-flex">
-    <div>
-        <form>
-            <input type="button" value="Flex Box and Bootstrap 4 PluralSight course" onclick="location.href='@Url.Action("Index", "FlexBoxBootStrapCourse")'" />
-        </form>
-    </div>
 </div>
 
 <div class="d-flex flex-row">
+    <div class="d-flex flex-row w-75">
+        @await Html.PartialAsync("../Shared/_postsTable")
+    </div>
 
-    <div class="d-flex flex-column w-25 secondaryBox">
+    <div id="catFactDiv" class="d-flex flex-column w-25 secondaryBox">
         <div class="d-flex flex-row">
             <h3 class="card-title">Cat Facts</h3>
         </div>
@@ -45,10 +43,5 @@
             <input class="btn btn-info" type="button" value="Get Cat" onclick="getCatFact()" />
         </div>
     </div>
-
-    <div class="d-flex flex-row w-75">
-        @await Html.PartialAsync("../Shared/_postsTable")
-    </div>
-
 </div>
 
