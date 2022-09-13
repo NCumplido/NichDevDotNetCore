@@ -1,6 +1,7 @@
 ﻿using NichDevDotNetCore.Data;
 using NichDevDotNetCore.Models;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace NichDevDotNetCore.Repositories;
 
@@ -11,6 +12,12 @@ public class PostRepository
     public PostRepository(ApplicationDbContext context)
     {
         _context = context;
+    }
+
+    public IReadOnlyList<Post> GetAll()
+    {
+        var posts = _context.Posts.ToList();
+        return posts;
     }
 
     public IReadOnlyList<Comment> GetAllCommentsByPost(int postId)
