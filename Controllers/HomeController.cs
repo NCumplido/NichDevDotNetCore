@@ -39,6 +39,11 @@ namespace NichDevDotNetCore.Controllers
             return catFact;
         }
 
+        public IActionResult Create()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
