@@ -1,8 +1,4 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
-
-@model NichDevDotNetCore.Models.ViewModels.PostsViewModel
+﻿@model NichDevDotNetCore.Models.ViewModels.PostsViewModel
 @{
     ViewData["Title"] = "Posts";
 }
@@ -22,6 +18,7 @@
 @*Banner*@
 <div class="d-flex flex-row banner">
     <a asp-action="Create" class="btn btn-primary">Create New</a>
+    <input type="button" value="Courses" class="btn btn-primary" onclick="location.href='@Url.Action("Index", "Courses")'" />
 </div>
 
 <div id="navBar" class="d-flex">
