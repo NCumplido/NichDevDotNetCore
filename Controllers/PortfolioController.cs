@@ -2,7 +2,7 @@
 
 namespace NichDevDotNetCore.Controllers
 {
-    public class CoursesController : Controller
+    public class PortfolioController : Controller
     {
         public IActionResult Index()
         {

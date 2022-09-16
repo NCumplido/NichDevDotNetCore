@@ -1,6 +1,6 @@
 ﻿@model NichDevDotNetCore.Models.ViewModels.PostsViewModel
 @{
-    ViewData["Title"] = "Posts";
+    ViewData["Title"] = "Home";
 }
 
 <head>
@@ -18,7 +18,7 @@
 @*Banner*@
 <div class="d-flex flex-row banner">
     <a asp-action="Create" class="btn btn-primary">Create New</a>
-    <input type="button" value="Courses" class="btn btn-primary" onclick="location.href='@Url.Action("Index", "Courses")'" />
+    <input type="button" value="Portfolio" class="btn btn-primary" onclick="location.href='@Url.Action("Index", "Portfolio")'" />
 </div>
 
 <div id="navBar" class="d-flex">
@@ -26,7 +26,7 @@
 
 <div class="d-flex flex-row">
     <div class="d-flex flex-row w-75">
-        @await Html.PartialAsync("../Shared/_postsTable")
+        @await Html.PartialAsync("_postsTable")
     </div>
 
     <div id="catFactDiv" class="d-flex flex-column w-25 secondaryBox">

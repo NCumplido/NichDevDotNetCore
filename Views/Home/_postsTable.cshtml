@@ -6,6 +6,9 @@
         <thead>
             <tr>
                 <th>
+                    <input type="checkbox">
+                </th>
+                <th>
                     @Html.DisplayNameFor(model => model.Content)
                 </th>
                 <th scope="col">
@@ -19,6 +22,9 @@
             {
                 <tr scope="row">
                     <td>
+                        <input type="checkbox">
+                    </td>
+                    <td>
                         @Html.DisplayFor(modelItem => item.Title)
                     </td>
                     <td>
@@ -26,7 +32,6 @@
                     </td>
                     <td>
                         <select>
-                            @*<option asp-action="Details" asp-route-id="@item.Id">Details</option>*@
                             <option asp-action="Details" asp-route-id="@item.Id">Details</option>
                             <option asp-action="Edit" asp-route-id="@item.Id">Edit</option>
                             <option asp-action="Delete" asp-route-id="@item.Id">Delete</option>
@@ -36,29 +41,6 @@
             }
         </tbody>
     </table>
-
-    @*    <div class="dropdown show">
-        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Options
-        </a>
-        <div class="dropdown-menu" aria-labelledby="options">
-        <a asp-action="Edit" asp-route-id="@item.Id" class="callOuts">Edit</a>
-        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-info">Details</a>
-        <a asp-action="Delete" asp-route-id="@item.Id" class="callOuts">Delete</a>
-        </div>
-        </div>
-
-        <div class="dropdown show">
-        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Options
-        </a>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-        </div>*@
-
 }
 else
 {

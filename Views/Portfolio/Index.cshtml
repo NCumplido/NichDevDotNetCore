@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Portfolio";
+}
+
+<head>
+    <meta charset="utf-8" />
+
+    <script src="scripts/app.js"></script>
+
+    <!-- Bootstrap files -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/PluralSightFlexBoxBootstrap4.css" />
+
+    <title></title>
+</head>
+
+@*Banner*@
+<div class="d-flex flex-row banner">
+</div>
+<div class="d-flex flex-row">
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Flex Box and Bootstrap 4 PluralSight course</td>
+                <td>
+                    <form>
+                        <input type="button" value="Flex Box and Bootstrap 4 PluralSight course" onclick="location.href='@Url.Action("Index", "FlexBoxBootStrapCourse")'" />
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="d-flex flex-row">
+    <iframe src="https://docs.google.com/document/d/e/2PACX-1vTSCc8qpm-iUz8OVdvwLjLOANmyjyL1Cza0Pf8B5DeNB_CWu7FTRfsK-j5Gk3HKodh98YYtBpYLk6E7/pub?embedded=true"
+            width="1300px" height="800px" frameborder="10"></iframe>
+</div>
