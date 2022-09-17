@@ -1,12 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace NichDevDotNetCore.Controllers
+namespace NichDevDotNetCore.Controllers;
+public class FlexBoxBootStrapCourseController : Controller
 {
-    public class FlexBoxBootStrapCourseController : Controller
+    public IActionResult Index()
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
+        return View();
     }
 }
