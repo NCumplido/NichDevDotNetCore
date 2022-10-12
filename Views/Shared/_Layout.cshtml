@@ -35,6 +35,12 @@
             &copy; 2022 - NichDevDotNetCore - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
+    @{
+        var controller = ViewContext.RouteData.Values["Controller"];
+        var action = ViewContext.RouteData.Values["Action"];
+
+        <script asp src-include="~/scripts/@($"{controller}_{action}").js" asp-append-version="true"></script>
+    }
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
